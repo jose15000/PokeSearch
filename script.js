@@ -7,10 +7,28 @@ card.style.display = 'none';
 const query = document.getElementById("input");
 const btn = document.querySelector('.btn');
 
-const loader = document.querySelector('.spinner-border');
-loader.style.display = 'none';
+//cores de cada tipo de pokemon
+Typecolors = {
+    normal: `rgb(158, 158, 109)`,
+    fighting: "rgb(184, 42, 36)",
+    flying: "rgb(158, 133, 238)",
+    poison: `rgb(196, 97, 226)`,
+    ground: "rgb(220, 184, 93)",
+    rock: "rgb(175, 149, 49)",
+    bug: "rgb(158, 175, 30)",
+    ghost: "rgb(101, 78, 141)",
+    steel: "rgb(175, 175, 202)",
+    fire: "rgb(238, 116, 43)",
+    water: "rgb(93, 133, 238)",
+    grass: "rgb(32, 178, 44)",
+    electric: " rgb(247, 201, 43)",
+    psychic: "rgb(247, 77, 125)",
+    ice: "rgb(141, 211, 211)",
+    dragon: "rgb(100, 50, 247)",
+    fairy: "rgb(238,173,180)",
+  };
 
-
+const types = Object.keys(Typecolors);
 //função para fazer a requisição
 
 //#region search funcion
@@ -52,13 +70,16 @@ function search(){
 
         document.querySelector('#peso').innerHTML = 'Peso: ' + data.weight/10 + ' Kg';  
         document.querySelector('#altura').innerHTML = 'Altura: ' + data.height/10 + ' m';
+        let pokeType = data.types.map(type => type.type.name);
+        let type = types.find(type => pokeType.indexOf(type) > -1)
+        let color = Typecolors[type];
 
+        let getType = document.querySelector('.type');
+        getType.innerHTML = pokeType;
+        getType.style.backgroundColor = color;
         card.style.display = 'block';
     })
 }
 
 //chama a função e faz a requisição para a api
 btn.onclick = search;
-
-
-

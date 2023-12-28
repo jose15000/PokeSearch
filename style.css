@@ -26,8 +26,7 @@ body
 
 .card
 {
-    margin-top: 30px;
-    
+    margin-top: 20px; 
 }
 
 .img-fluid
@@ -42,4 +41,13 @@ body
 {
     max-height: 100px;
     overflow-y: scroll;
+}
+
+.type
+{
+    padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  text-align: center;
+  margin: 0px 5px;
 }
