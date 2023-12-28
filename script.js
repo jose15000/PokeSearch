@@ -1,11 +1,8 @@
 
-//inicializa a aplicação com o card 'escondido'
-var card = document.querySelector('#card');
-card.style.display = 'none';
-
 //define o formulário como input
 const query = document.getElementById("input");
 const btn = document.querySelector('.btn');
+const card = document.querySelector('#card');
 
 //cores de cada tipo de pokemon
 Typecolors = {
@@ -27,8 +24,15 @@ Typecolors = {
     dragon: "rgb(100, 50, 247)",
     fairy: "rgb(238,173,180)",
   };
-
 const types = Object.keys(Typecolors);
+
+function showCard()
+{
+    setTimeout(() => {
+        card.style.display = 'block';
+    }, 1000);  
+}
+
 //função para fazer a requisição
 
 //#region search funcion
@@ -46,7 +50,7 @@ function search(){
         return response.json();
     })
 
-    //recuperando os dados da API
+    //#region recuperar dados da API
     .then(data =>{
         console.log(data)
         var pokeName = data['name'];
@@ -77,8 +81,9 @@ function search(){
         let getType = document.querySelector('.type');
         getType.innerHTML = pokeType;
         getType.style.backgroundColor = color;
-        card.style.display = 'block';
+        showCard();
     })
+    //#endregion
 }
 
 //chama a função e faz a requisição para a api
