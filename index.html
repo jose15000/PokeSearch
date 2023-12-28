@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/slugify@1.6.6/slugify.min.js"></script>
     <link rel="shortcut icon" href="src/pokeball_icon_211225.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -20,7 +20,9 @@
             <input type="text" id="input" class="form-control" placeholder="Pesquisar Pokémon" aria-label="Pesquisar Pokémon" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" type="button" id="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
-
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
           <div class="card mb-3" id='card' style="width: 20rem;">
             <div class="text-center">
                 <img src="#" id="sprite" class="img-fluid" style="max-width: 100%; height: auto;">
@@ -47,7 +49,6 @@
     </div>
 
     
-      
+    
 </body>
-</html>
 <script src="script.js"></script>
