@@ -20,7 +20,7 @@ ou se preferir, logo abaixo tem um passo a passo de como instalar a aplicação 
 ## Como Utilizar
 1. **Clone o Repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/pokesearch-app.git
+   git clone https://github.com/jose15000/PokeSearch
    ```
 
 2. **Abra o Arquivo HTML:**
